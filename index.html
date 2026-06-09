@@ -1,0 +1,41 @@
+// 요소 선택
+const todoInput = document.querySelector('.todo-input-area input');
+const addBtn = document.querySelector('.todo-add');
+const todoList = document.querySelector('.todo-list');
+
+// 할 일 추가 함수
+function addTodo() {
+    const text = todoInput.value.trim();
+    if (text === "") return; // 빈 값 입력 방지
+
+    // 리스트 아이템 생성
+    const li = document.createElement('li');
+    li.style.display = 'flex';
+    li.style.justifyContent = 'space-between';
+    li.style.alignItems = 'center';
+    li.style.marginBottom = '8px';
+
+    // 텍스트와 삭제 버튼 추가
+    li.innerHTML = `
+        <span>${text}</span>
+        <button class="delete-btn" style="background:transparent; border:1px solid #ff4757; color:#ff4757; border-radius:5px; cursor:pointer; padding:2px 8px;">X</button>
+    `;
+
+    // 삭제 버튼 이벤트
+    li.querySelector('.delete-btn').addEventListener('click', function() {
+        li.remove();
+    });
+
+    todoList.appendChild(li);
+    todoInput.value = ""; // 입력창 초기화
+}
+
+// 등록 버튼 클릭 이벤트
+addBtn.addEventListener('click', addTodo);
+
+// 엔터키 입력 이벤트
+todoInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        addTodo();
+    }
+});

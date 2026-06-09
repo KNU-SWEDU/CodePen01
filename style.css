@@ -1,0 +1,72 @@
+/* 기본 초기화 */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: #0f172a;
+    color: white;
+    font-family: 'Pretendard', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+header { margin-bottom: 2rem; }
+
+/* 글래스모피즘 카드 스타일 */
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.timer-display {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+/* 버튼 효과 */
+.timer-btn, .todo-add {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    background: #38bdf8;
+    color: #0f172a;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+}
+
+.timer-btn:hover, .todo-add:hover {
+    background: #7dd3fc;
+}
+
+/* 할 일 입력창 */
+.todo-input-area { display: flex; gap: 0.5rem; }
+input {
+    flex: 1;
+    padding: 0.8rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.todo-list {
+    list-style: none;
+    margin-top: 1rem;
+    text-align: left;
+}
+
+.todo-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
